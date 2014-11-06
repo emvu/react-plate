@@ -1,11 +1,11 @@
 AppDispatcher = require("../dispatchers/app-dispatcher")
-merge         = require("react/lib/merge")
+assign        = require('object-assign');
 EventEmitter  = require("events").EventEmitter
 CHANGE_EVENT  = "change"
 
 message = null
 
-DemoStore = merge(EventEmitter::,
+DemoStore = assign(EventEmitter::,
   emitChange: ->
     @emit CHANGE_EVENT
 

@@ -2,20 +2,25 @@
 
 React    = require 'react'
 actions  = require '../actions/app-actions'
-B        = require 'react-bootstrap'
+# B        = require 'react-bootstrap'
 R        = require('react-router')
+Tab      = require '../components/tab'
 
 AppRoute = React.createClass
   render: ->
     <div>
-      <B.Navbar>
-        <B.Nav>
-          <li><R.Link to="home">Home</R.Link></li>
-          <li><R.Link to="demo">Demo</R.Link></li>
-        </B.Nav>
-      </B.Navbar>
+      <nav className="navbar navbar-default" role="navigation">
+        
+          <ul className="nav navbar-nav">      
+            <Tab to="home">Home</Tab>
+            <Tab to="demo">Demo</Tab>
+          </ul>
+        
+      </nav>
 
-      <this.props.activeRouteHandler />
+      <div className="well">
+        <this.props.activeRouteHandler />
+      </div>
     </div>
 
 module.exports = AppRoute

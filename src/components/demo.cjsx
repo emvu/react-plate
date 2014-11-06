@@ -2,7 +2,6 @@
 
 React   = require('react')
 actions = require '../actions/app-actions'
-B       = require('react-bootstrap');
 
 Demo = React.createClass
 
@@ -10,10 +9,10 @@ Demo = React.createClass
     actions.loadDemoMessage()
 
   render: ->
-    message = if @props.message then <B.Alert bsStyle="warning">{@props.message}</B.Alert> else null
+    message = if @props.message then <div className="alert alert-success">{@props.message}</div> else null
 
     <div>
-      <B.Button onClick={@handleClick} bsStyle="primary">Load Demo Message</B.Button>
+      <button onClick={@handleClick} className="btn btn-primary">Load Demo Message</button>
 
       {message}
     </div>
